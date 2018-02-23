@@ -1,3 +1,6 @@
+
+[![Work Status](https://img.shields.io/badge/work-in%20progress-red.svg)](https://github.com/andrewnsk/react_news_feed)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
