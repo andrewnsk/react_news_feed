@@ -1,0 +1,7 @@
+const actionTypes = {
+ ADD_ARTICLE: "ADD_ARTICLE",
+ REMOVE_ARTICLE: "REMOVE_ARTICLE",
+ RATE_ARTICLE: "RATE_ARTICLE",
+ UPDATE_ARTICLE: "UPDATE_ARTICLE"
+}
+export default actionTypes
