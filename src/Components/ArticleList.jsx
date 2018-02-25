@@ -4,8 +4,8 @@ const mapStateToProps = state => {
     return { articles: state.articles };
 };
 const ConnectedList = ({ articles }) => (
-    <div className="col-md-8 blog-main">
-        <h3 class="pb-3 mb-4 font-italic border-bottom">
+    <div>
+        <h3 className="pb-3 mb-4 font-italic border-bottom">
             Hot news
         </h3>
         {articles.map(el => (
