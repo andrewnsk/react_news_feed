@@ -1,13 +1,16 @@
 import { ADD_ARTICLE } from "../constants/actionTypes";
+
+const time = (new Date(Date.now()-(new Date()).getTimezoneOffset() * 60000)).toISOString().slice(0, 17).replace('T', ' ');
+
 const initialState = {
     articles: [
-        {'author': 'Alice', 'time': 'February 24, 2018', 'title': 'Sample blog post',
+        {'id': 0, 'author': 'Alice', 'time': time, 'title': 'Sample blog post',
             'text': 'Cum sociis natoque penatibus et magnis dis parturient montes,' +
             ' nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem ' +
             'lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. ' +
             'Cras mattis consectetur purus sit amet fermentum.\n' +
             '\n'},
-        {'author': 'Bob', 'time': 'February 25, 2018', 'title': 'Another blog post',
+        {'id': 1, 'author': 'Bob', 'time': time, 'title': 'Another blog post',
             'text': 'Cum sociis natoque penatibus et magnis dis parturient montes, ' +
             'nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem ' +
             'lacinia quam venenatis vestibulum. Sed posuere consectetur est at ' +
