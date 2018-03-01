@@ -25,8 +25,7 @@ class ConnectedForm extends Component {
     handleSubmit(event) {
         event.preventDefault();
         const { title, author, text, } = this.state;
-        const time_now = new Date();
-        const time = time_now.toISOString().substring(0, 16).replace('T', ' ');
+        const time = (new Date(Date.now()-(new Date()).getTimezoneOffset() * 60000)).toISOString().slice(0, 17).replace('T', ' ');
         const id = uuidv1();
         this.props.addArticle({ title, author, text, id, time});
         this.setState({ title: "", author: "", text: ""});
