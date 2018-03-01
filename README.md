@@ -2,3 +2,5 @@
 
 ### Sample React project
 ##### inspired by [this tutorial](https://www.valentinog.com/blog/react-redux-tutorial-beginners/ "Tutorial")
+ [also this one](http://www.thegreatcodeadventure.com/react-redux-tutorial-part-viii-the-delete-feature/ "Tutorial")
+
