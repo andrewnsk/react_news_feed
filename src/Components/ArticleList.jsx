@@ -3,22 +3,22 @@ import { connect } from "react-redux";
 import { Button } from 'reactstrap';
 import { removeArticle } from "../actions/index";
 
-
 const mapStateToProps = state => {
     return { articles: state.articles };
 };
 
+const mapDispatchToProps = dispatch => {
+    return {
+        removeArticle: id => dispatch(removeArticle(id))
+    };
+};
 
 class ConnectedList extends Component {
 
-    buttonClicked(el) {
-        removeArticle(el.id);
-        console.log('click id: ' + el.id)
-    }
-
       handleClick = (id) => {
         console.log('this is:', id);
-      }
+        this.props.removeArticle(id);
+      };
 
     render() {
         return (
@@ -41,6 +41,6 @@ class ConnectedList extends Component {
     }
 }
 
-const List = connect(mapStateToProps)(ConnectedList);
+const List = connect(mapStateToProps, mapDispatchToProps)(ConnectedList);
 export default List;
 
