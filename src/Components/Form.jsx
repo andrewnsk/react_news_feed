@@ -54,8 +54,7 @@ class ConnectedForm extends Component {
                     />
 
                     <label htmlFor="text">Text</label>
-                    <input
-                        type="text"
+                    <textarea
                         className="form-control"
                         id="text"
                         value={text}
