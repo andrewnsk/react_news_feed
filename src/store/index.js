@@ -17,7 +17,9 @@ const initialState = {
             'lacinia quam venenatis vestibulum. Sed posuere consectetur est at ' +
             'lobortis. Cras mattis consectetur purus sit amet fermentum.'
         }
-            ]
+            ],
+    user: {'userType': 'anonymous', 'someInfo': 'testString'},
+    header: {'title': 'Default title'}
 };
 
 // const storageState = localStorage.setItem('reduxState', JSON.stringify(initialState));

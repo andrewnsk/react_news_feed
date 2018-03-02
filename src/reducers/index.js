@@ -1,4 +1,4 @@
-import { ADD_ARTICLE, REMOVE_ARTICLE } from "../constants/actionTypes";
+import { ADD_ARTICLE, REMOVE_ARTICLE, LOGIN, LOGOUT } from "../constants/actionTypes";
 
 const rootReducer = (state, action) => {
     switch (action.type) {
@@ -6,8 +6,16 @@ const rootReducer = (state, action) => {
             return { ...state, articles: state.articles.concat(action.payload) };
 
         case REMOVE_ARTICLE:
-            console.log('Hello from reducer: ', action.payload);
-            return { articles : state.articles.filter( (post) => post.id !== action.payload) };
+            return { ...state, articles : state.articles.filter( (post) => post.id !== action.payload) };
+
+        case LOGIN:
+            console.log('Hello from login reducer');
+            return { user: {'userType': 'registered', 'userName': 'Vasya'} };
+
+        case LOGOUT:
+            console.log('Hello from logout reducer');
+            return { user: {'userType': 'anonymous'} };
+
 
         default:
             return state;

@@ -12,9 +12,20 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
 import logo from '../logo.svg';
+import { connect } from "react-redux";
+import { logIn, logOut } from "../actions/index";
 
+const mapStateToProps = state => {
+    return { user: state.user };
+};
 
-export default class DarkNavBar extends React.Component {
+const mapDispatchToProps = dispatch => {
+    return {
+        logIn: user => dispatch(logIn(user))
+    };
+};
+
+class ConnectedDarkNavBar extends React.Component {
   constructor(props) {
     super(props);
 
@@ -23,6 +34,7 @@ export default class DarkNavBar extends React.Component {
       isOpen: false
     };
   }
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
@@ -44,7 +56,7 @@ export default class DarkNavBar extends React.Component {
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  Options
+                    {this.props.user.userType}
                 </DropdownToggle>
                 <DropdownMenu >
                   <DropdownItem>
@@ -66,6 +78,9 @@ export default class DarkNavBar extends React.Component {
     );
   }
 }
+
+const DarkNavBar = connect(mapStateToProps, mapDispatchToProps)(ConnectedDarkNavBar);
+export default DarkNavBar;
 
 DarkNavBar.defaultProps = {
   title: 'Default title'
