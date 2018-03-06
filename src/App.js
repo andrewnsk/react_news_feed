@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import LightHeader from './Components/LightHeader'
-import DarkNavBar from './Components/DarkNavBar'
-import List from './Components/ArticleList'
-import Form from './Components/Form'
+import LightHeader from './components/LightHeader'
+import DarkNavBar from './components/DarkNavBar'
+import List from './components/ArticleList'
+import Form from './components/Form'
 
 class App extends Component {
   render() {
